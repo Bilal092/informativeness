@@ -6,7 +6,7 @@ import scipy as sp
 
 #__all__ = ['PSD_Distances']
 '''
-This module works specfically for trace normalized corrleation operators 
+This module works specfically for trace normalized correlation operators 
 
 '''
 
