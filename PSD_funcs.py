@@ -35,7 +35,6 @@ def Dist2Corr(D):
     E[E < 0] = 0
     K = U@np.diag(E)@U.T
     # Normalization for PSD to Correlation matrix
-    N = K.shape[0]
     Diag = np.diag(K)
     Diag = np.diag(K)
     Diag_nonzeros = Diag > 0
