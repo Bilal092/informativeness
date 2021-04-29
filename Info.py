@@ -44,8 +44,7 @@ def Info_embeddings(Z, metric):
     # In contrast to informtivness paper our matrix Z is R^{n*d}
     n = Z.shape[0]
     K = Z@Z.T
-    n = Z.shape[0]
-
+ 
     if metric == "Bures" or metric == "bures":
         if n > 1:
             HK = K - np.mean(K, axis = 0)
