@@ -66,11 +66,3 @@ def Info_embeddings(Z, metric):
             return temp
         else:
             return 0
-    
-
-    
-
-
-
-
-
