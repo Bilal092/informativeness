@@ -17,7 +17,7 @@ def Info(K, metric):
     k_bar =  np.mean(K)
   
     if metric == "Bures"  or metric == "bures" :
-        if n > 0:
+        if n > 1:
             HK = K - np.mean(K, axis=0)
             HKH = HK - np.mean(HK, axis=1)[:, np.newaxis]
             HKH = (HKH + HKH.T) /2
