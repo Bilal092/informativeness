@@ -11,7 +11,6 @@ def PSD2normedCorr(K):
     assert(K.shape[0] == K.shape[1]), "Input matrix must be square"
     N = K.shape[0]
     Diag = np.diag(K)
-    Diag = np.diag(K)
     Diag_nonzeros = Diag > 0
     K_Corr = np.zeros(K.shape)
     sqrt_inv_nz_Diag = np.zeros(Diag.shape)
