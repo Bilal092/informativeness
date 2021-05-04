@@ -39,7 +39,7 @@ def Info(K, metric):
             return 0
 
 
-# This part is written for computation of Infromativess when K = Z*Z.T, where Z belongs to R^{n*d} with 
+# This part is written for computation of Infromativess when K = Z*Z.T is correlation matrix
 def Info_embeddings(Z, metric):
     # In contrast to informtivness paper our matrix Z is R^{n*d}
     n = Z.shape[0]
