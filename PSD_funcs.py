@@ -2,12 +2,18 @@ import numpy as np
 
 
 def is_PSD(X):
+    '''
+    Function to test positive semidefinitiness of symmsteric matrices.
+    '''
     # If absolute value of eigen-value is below 10^-15 it is set zero
     E = np.linalg.eigvalsh(X) 
     E[np.abs(E) < 1e-15] = 0
     return np.all(E >= 0)
 
 def PSD2normedCorr(K):
+    '''
+    Function to convert PSD matrices to unit trace normalized Correlation matrices
+    '''
 
     assert(len(K.shape) == 2), "input array must be square"
     assert(K.shape[0] == K.shape[1]), "Input matrix must be square"
@@ -26,6 +32,9 @@ def PSD2normedCorr(K):
 
 
 def Dist2Corr(D):
+    '''
+    This function convert distance matrices to Correlation operators.
+    '''
     assert(len(D.shape) == 2), "input array must be square"
     assert(D.shape[0] == D.shape[1]), "Input matrix must be square"
     # Centering
