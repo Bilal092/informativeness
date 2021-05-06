@@ -2,8 +2,10 @@ import numpy as np
 
 
 def is_PSD(X):
-    return np.all(np.linalg.eigvals(X) >= 0)
-
+    # If absolute value of eigen-value is below 10^-15 it is set zero
+    E = np.linalg.eigvalsh(X) 
+    E[np.abs(E) < 1e-15] = 0
+    return np.all(E >= 0)
 
 def PSD2normedCorr(K):
 
