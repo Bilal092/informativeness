@@ -6,6 +6,7 @@ def is_PSD(X):
     Function to test positive semidefinitiness of symmsteric matrices.
     '''
     # If absolute value of eigen-value is below 10^-15 it is set zero
+    #  More efficient implementation can follow https://stackoverflow.com/questions/16266720/find-out-if-matrix-is-positive-definite-with-numpy
     E = np.linalg.eigvalsh(X) 
     E[np.abs(E) < 1e-15] = 0
     return np.all(E >= 0)
