@@ -3,7 +3,7 @@ import numpy as np
 
 def is_PSD(X):
     '''
-    Function to test positive semidefinitiness of symmsteric matrices.
+    Function to test positive semidefinitiness of symmetric matrices.
     '''
     # If absolute value of eigen-value is below 10^-15 it is set zero
     #  More efficient implementation can follow https://stackoverflow.com/questions/16266720/find-out-if-matrix-is-positive-definite-with-numpy
