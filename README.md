@@ -2,7 +2,7 @@ Python Implementations of Bures and Cosine Informativeness from:
 
 https://jmlr.org/papers/v18/16-296.html
 
-The Code in repository is still under development. So far it contains three modules:
+The code in repository is still under development. So far it contains three modules:
 1. Info.py contains two function:
      i) Function Info computes Bures and Cosine Informativeness for general correlation operators with diagonals of ones.
      ii) Function Info_embeddings computes Bures Informativeness for embedding Z of correlation matrix A onto oblique manifold, where A = Z*Z.T is correlation matrix.
