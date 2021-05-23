@@ -2,7 +2,7 @@ import numpy as np
 import scipy as sp
 
 def sqrtm_safe(K):
-    [E,U] = sp.linalg.eigh( (K + K.T) / 2 )
+    [E,U] = np.linalg.eigh( (K + K.T) / 2 )
     E[E < 0] = 0
     Lambd = np.diag( np.sqrt( E) )
     return U @ Lambd @ U.T
@@ -44,7 +44,6 @@ def Info(K, metric):
 def Info_embeddings(Z, metric):
     # In contrast to informtivness paper our matrix Z is R^{n*d}
     n = Z.shape[0]
-    K = Z@Z.T
 
     if metric == "Bures" or metric == "bures":
         if n > 1:
@@ -58,6 +57,7 @@ def Info_embeddings(Z, metric):
     
     if metric == "Cosine" or metric == "cosine":
         if n > 1:
+            K = Z@Z.T
             Z1 = np.sum(Z, axis=0)
             Z1_norm_sqrd = (np.linalg.norm(Z1))**2
             Z_fro_sqrd = (np.linalg.norm(Z, ord = 'fro'))**2
@@ -67,4 +67,4 @@ def Info_embeddings(Z, metric):
             return temp
         else:
             return 0
-
+    
